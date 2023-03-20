@@ -1,0 +1,51 @@
+{
+  "name": "repo2tree",
+  "displayName": "Repo2Tree",
+  "description": "Convert your repository into a stringified JSON object.",
+  "publisher": "andyktran",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.repo2tree",
+        "title": "Convert repo into JSON object"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/jsonminify": "^0.4.1",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/uglify-js": "^3.17.1",
+    "@types/vscode": "^1.76.0",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "@vscode/test-electron": "^2.2.3",
+    "eslint": "^8.34.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "esbuild": "^0.17.12",
+    "jsonminify": "^0.4.2",
+    "uglify-js": "^3.17.4"
+  }
+}
